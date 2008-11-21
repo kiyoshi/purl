@@ -17,7 +17,7 @@ module Purl
       load_feature Features::ResizeMacro
       load_feature Features::Cairo
       load_feature Features::CairoGradient
-      yield self
+      yield self if block_given?
     end
   end
 

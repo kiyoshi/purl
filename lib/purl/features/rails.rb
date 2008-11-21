@@ -13,7 +13,7 @@ module Purl
       end
 
       def load(image_id)
-        image = @image_class.find(image_id)
+        image = @image_class.find(image_id.to_i)
         image = Magick::Image.from_blob(image.send(@data_column)).shift.strip!
         Result.new(image)
       end
